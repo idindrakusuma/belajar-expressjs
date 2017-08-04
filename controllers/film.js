@@ -4,7 +4,10 @@ module.exports = {
   //post data from api
   create: function(req, res) {
     //console.log('data request : ', req.body);
-    var result = {}
+    var result = {
+      msg: 'Gagal',
+      success : false
+    }
 
     var film = new Film({
       judul: req.body.judul,
@@ -14,14 +17,15 @@ module.exports = {
     film.save(function(err){
       if (err) {
         result.msg = err
-        res.json(result)
       }
       else{
         result.msg = 'Sukses!'
-        res.json(result)
+        result.success = true
       }
+      
+      res.json(result)
     })
-    //res.json(req.body)
+    
   },
 
   index:function(req, res){
