@@ -5,5 +5,10 @@
 - MongoDB
 - Mongoose
 
+## Run Server
+```
+npm run start
+```
+
 ## Mentor
 [@dikyarga](https://github.com/dikyarga)
